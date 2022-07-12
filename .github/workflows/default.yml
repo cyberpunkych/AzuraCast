@@ -58,6 +58,10 @@ jobs:
       - name: Run Composer install
         run: |
           composer install --no-interaction --ignore-platform-reqs
+          
+      - name: Run GetText install
+        run: |
+          apt-get install -yq gettext libgettextpo-dev
 
       - name: Run PHP Linter
         run: |
@@ -204,7 +208,7 @@ jobs:
         with:
           images: |
             azuracast/azuracast
-            ghcr.io/azuracast/azuracast
+            ghcr.io/cyberpunkych/azuracast
           tags: |
             type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
             type=ref,event=branch
@@ -218,5 +222,34 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=ghcr.io/azuracast/azuracast:buildcache
-          cache-to: type=registry,ref=ghcr.io/azuracast/azuracast:buildcache,mode=max
+          cache-from: type=registry,ref=ghcr.io/cyberpunkych/azuracast:buildcache
+          cache-to: type=registry,ref=ghcr.io/cyberpunkych/azuracast:buildcache,mode=max
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
