@@ -120,7 +120,7 @@ jobs:
         with:
           context: .
           load: true
-          tags: ghcr.io/azuracast/azuracast:latest
+          tags: ghcr.io/cyberpunkych/azuracast:latest
           cache-from: type=registry,ref=ghcr.io/azuracast/azuracast:buildcache
 
       - name: Set up functional test environment.
