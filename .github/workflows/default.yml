@@ -88,7 +88,7 @@ jobs:
           npm run generate-locales
           
           cd ..
-          sudo apt-get install -yq gettext libgettextpo-dev
+          npm install --save-dev easygettext
           bin/console locale:generate
 
       - name: Pull latest translations.
@@ -108,7 +108,7 @@ jobs:
 
       - name: Import locales, build static assets.
         run: |
-          sudo apt-get install -yq gettext libgettextpo-dev
+          npm install --save-dev easygettext
           bin/console locale:import
 
           cd frontend
