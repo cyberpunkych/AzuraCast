@@ -61,7 +61,7 @@ jobs:
           
       - name: Run GetText install
         run: |
-          apt-get install -yq gettext libgettextpo-dev
+          sudo apt-get install -yq gettext libgettextpo-dev
 
       - name: Run PHP Linter
         run: |
